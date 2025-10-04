@@ -7,8 +7,8 @@ public class Pedido {
     private String numerodoPedido;
     private LocalDateTime dataPedido;
     private List<ItemPedido> itens;
-    private StatusPedido status;
-    private String competidor;
+    private StatusPedido status; //avaliar
+    private String competidor; //cliente
 
     public Pedido(){
         this.dataPedido = LocalDateTime.now();

@@ -25,13 +25,13 @@ class PedidoServiceTest{
 
         //Calculo do Valor total
         @Test
-        @DisplayName("RF0002.Deve lancar UnsupportedOperationException quando chamar Calcular Valortotal")
+        @DisplayName("RF0002.Deve lancar UnsupportedOperationException quando chamar Calcular Valor total")
         void deve_LancarUnsupportedOperationException_quandoCalcularValortotal() {
 
             //Dados
                 Pedido pedido = new Pedido();
 
-//            Quando:
+//            Quando: o metodo calcular é chamado
 //                pedidoService.calcularValorTotal(pedido);
 
             //Entao: uma exception deve ser lançada.
@@ -40,7 +40,7 @@ class PedidoServiceTest{
         }
 
         @Test
-        @DisplayName("RF0002.Deve lancar UnsupportedOperationException quando chamar Calcular Valortotal")
+        @DisplayName("RF0002.Deve lancar UnsupportedOperationException quando chamar Calcular Valortotal de 1 item")
         void deveCalcularValortotal_quandoPedidoPossuiUmItem() {
                 ItemPedido item =  new ItemPedido();
                 List<ItemPedido> itens = new ArrayList<ItemPedido>();

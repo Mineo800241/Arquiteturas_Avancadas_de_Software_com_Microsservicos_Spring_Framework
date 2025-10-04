@@ -1,6 +1,6 @@
 package br.edu.infnet.maxwellpedidoapi.model.domain;
 
-public enum tipoProduto {
+public enum TipoProduto {
     AGUA,
     REFRIGERANTE,
     ENERGETICO,
