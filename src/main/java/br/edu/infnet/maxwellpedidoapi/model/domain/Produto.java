@@ -3,15 +3,16 @@ package br.edu.infnet.maxwellpedidoapi.model.domain;
 import java.math.BigDecimal;
 
 public class Produto {
+
     // criar o id
     private String codigo;
-    private String nomeProduto;
+    private NomeProduto nomeproduto;
     private TipoProduto tipoProduto;
     private BigDecimal valor;
 
-    public Produto(String number, String acai,BigDecimal bigDecimal) {
+    public Produto(String codigo, NomeProduto nomeproduto, TipoProduto tipoProduto, BigDecimal valor) {
         this.codigo = codigo;
-        this.nomeProduto = nomeProduto;
+        this.nomeproduto = nomeproduto;
         this.tipoProduto = tipoProduto;
         this.valor = valor;
     }
@@ -24,14 +25,6 @@ public class Produto {
         this.codigo = codigo;
     }
 
-    public BigDecimal getValor() {
-        return valor;
-    }
-
-    public void setValor(BigDecimal valor) {
-        this.valor = valor;
-    }
-
     public TipoProduto getTipoProduto() {
         return tipoProduto;
     }
@@ -40,11 +33,20 @@ public class Produto {
         this.tipoProduto = tipoProduto;
     }
 
-    public String getNomeProduto() {
-        return nomeProduto;
+    public BigDecimal getValor() {
+        return valor;
     }
 
-    public void setNomeProduto(String nomeProduto) {
-        this.nomeProduto = nomeProduto;
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
+
+    public NomeProduto getNomeproduto() {
+        return nomeproduto;
+    }
+
+    public void setNomeproduto(NomeProduto nomeproduto) {
+        this.nomeproduto = nomeproduto;
     }
 }
+

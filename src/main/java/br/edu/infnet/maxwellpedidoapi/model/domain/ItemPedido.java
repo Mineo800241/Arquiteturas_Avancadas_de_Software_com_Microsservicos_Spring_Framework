@@ -5,14 +5,42 @@ import java.math.BigDecimal;
 public class ItemPedido {
     private int quantidade;
     private Produto produto;
-    private Comida comida;
-    private Bebida bebida;
-    private SemComida sempedidocomida;
-    private SemBebida sempedidobebida;
 
     // Calcular o valor do produto x quantidade
     public BigDecimal calcularSubTotal(){
-        return null; //quantidade x valor do produto
+        if (quantidade <= 0){
+            return BigDecimal.ZERO;
+        }
+
+        if (quantidade > 1){
+            return BigDecimal.ZERO;
+        }
+
+        if(produto.getNomeproduto() == null){
+            return BigDecimal.ZERO;
+        }
+
+        if (produto.getValor()== null){
+            return BigDecimal.ZERO;
+        }
+
+        if(produto.getNomeproduto() == NomeProduto.SEMCOMIDA){
+            return BigDecimal.ZERO;
+        }
+
+        if (produto.getTipoProduto()==TipoProduto.SEMCOMIDA){
+            return BigDecimal.ZERO;
+        }
+
+        if (produto.getNomeproduto() == NomeProduto.SEMBEBIDA){
+            return BigDecimal.ZERO;
+        }
+
+        if(produto.getTipoProduto() == TipoProduto.SEMBEBIDA){
+            return BigDecimal.ZERO;
+        }
+
+        return produto.getValor().multiply(new BigDecimal(quantidade));
     }
 
     public int getQuantidade() {
@@ -23,43 +51,15 @@ public class ItemPedido {
         this.quantidade = quantidade;
     }
 
+    public Produto getComida() {
+        return produto;
+    }
+
     public Produto getProduto() {
         return produto;
     }
 
     public void setProduto(Produto produto) {
         this.produto = produto;
-    }
-
-    public Comida getComida() {
-        return comida;
-    }
-
-    public void setComida(Comida comida) {
-        this.comida = comida;
-    }
-
-    public Bebida getBebida() {
-        return bebida;
-    }
-
-    public void setBebida(Bebida bebida) {
-        this.bebida = bebida;
-    }
-
-    public SemComida getSempedidocomida() {
-        return sempedidocomida;
-    }
-
-    public void setSempedidocomida(SemComida sempedidocomida) {
-        this.sempedidocomida = sempedidocomida;
-    }
-
-    public SemBebida getSempedidobebida() {
-        return sempedidobebida;
-    }
-
-    public void setSempedidobebida(SemBebida sempedidobebida) {
-        this.sempedidobebida = sempedidobebida;
     }
 }
