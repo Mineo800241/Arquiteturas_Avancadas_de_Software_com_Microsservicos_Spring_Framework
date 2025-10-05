@@ -13,7 +13,6 @@ public class ItemPedidoTest {
 
 
     private Produto produto;
-    private Produto produto1;
 
     @BeforeEach
     void setup() {
@@ -120,13 +119,11 @@ public class ItemPedidoTest {
     @DisplayName("Deve retornar zero quandoComidaSim_BebidaNao")
     void deveRetornarZero_quandoComidaSim_BebidaNao(){
 
-        produto = new Produto("1",NomeProduto.ACAI,TipoProduto.COMIDA,new BigDecimal("10.00"));
-        produto1 = new Produto("3",NomeProduto.SEMBEBIDA,TipoProduto.SEMBEBIDA,new BigDecimal("10.00"));
+        produto = new Produto("3",NomeProduto.SEMBEBIDA,TipoProduto.SEMBEBIDA,new BigDecimal("10.00"));
 
         ItemPedido itemPedido = new ItemPedido();
         itemPedido.setQuantidade(1);
         itemPedido.setProduto(produto);
-        itemPedido.setProduto(produto1);
 
         BigDecimal valorEsperado = BigDecimal.ZERO;
 
@@ -139,14 +136,12 @@ public class ItemPedidoTest {
     @DisplayName("Deve retornar zero quandoComidaNao_BebidaSim")
     void deveRetornarZero_quandoComidaNao_BebidaSim(){
 
-        produto = new Produto("1",NomeProduto.AGUA,TipoProduto.BEBIDA,new BigDecimal("10.00"));
-        produto1 = new Produto("2",NomeProduto.SEMCOMIDA,TipoProduto.SEMCOMIDA,BigDecimal.ZERO);
+        produto = new Produto("2",NomeProduto.SEMCOMIDA,TipoProduto.SEMCOMIDA,BigDecimal.ZERO);
 
 
         ItemPedido itemPedido = new ItemPedido();
         itemPedido.setQuantidade(1);
         itemPedido.setProduto(produto);
-        itemPedido.setProduto(produto1);
 
         BigDecimal valorEsperado = BigDecimal.ZERO;
 
